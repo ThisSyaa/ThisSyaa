@@ -1,7 +1,9 @@
 <?php
-// Melonggarkan waktu eksekusi
+
+// Melonggarkan batas waktu eksekusi Vercel
 set_time_limit(60);
 
+// 1. Buat folder sementara di /tmp yang diizinkan oleh sistem Vercel
 $storagePath = '/tmp/storage';
 if (!is_dir($storagePath)) {
     mkdir($storagePath, 0777, true);
@@ -12,18 +14,15 @@ if (!is_dir($storagePath)) {
     mkdir("$storagePath/logs", 0777, true);
 }
 
+// 2. Buat file database SQLite kosong di dalam /tmp
 touch('/tmp/database.sqlite');
 
-// Beritahu Laravel jalur folder Vercel
-$_SERVER['LARAVEL_STORAGE_PATH'] = $storagePath;
-$_ENV['LARAVEL_STORAGE_PATH'] = $storagePath;
-
+// 3. Muat aplikasi Laravel
 require __DIR__ . '/../vendor/autoload.php';
-$app = require __DIR__ . '/../bootstrap/app.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-$response->send();
-$kernel->terminate($request, $response);
+// 4. KUNCI LARAVEL 11: Wajib secara eksplisit mengubah jalur Storage
+$app->useStoragePath($storagePath);
+
+// 5. Tangkap dan kirimkan balasan ke browser
+$app->handleRequest(Illuminate\Http\Request::capture());
