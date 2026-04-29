@@ -1,58 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://giffiles.alphacoders.com/221/221887.gif" alt="banner" height="250" width="100%"/>
 </p>
 
-## About Laravel
+<h1 align="center">Syaaxi</h1>
+<h3 align="center">Web Developer | IoT Enthusiast | Building Smart Solutions</h3>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 About Me
+- 💻 Passionate in Web Development
+- 🌐 Building websites with modern technology
+- 📡 Exploring IoT & automation systems
+- ⚡ Always learning new things
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛠️ Tech Stack
+<p align="center">
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
+<img src="https://img.shields.io/badge/IoT-00C853?style=for-the-badge&logo=arduino&logoColor=white"/>
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+</p>
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🎧 Playlist
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+<p align="center">
+  <a href="https://open.spotify.com/playlist/2qULvQY83B8tjXgYnRjHXZ">
+    <img src="https://img.shields.io/badge/🎧%20My%20Playlist-Open%20Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
+  </a>
+</p>
 
-```bash
-composer require laravel/boost --dev
+---
 
-php artisan boost:install
-```
+## 🚀 Featured Projects
+- 🌐 Portfolio Website
+- 📡 IoT Smart Monitoring
+- 🔐 Login System PHP
+- ⚙️ Automation Dashboard
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 💬 Discord
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<p align="center">
+  <a href="https://discord.com/users/905121007470268427">
+    <img src="https://lanyard.cnrad.dev/api/905121007470268427"/>
+  </a>
+</p>
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📫 Contact
 
-## Security Vulnerabilities
+<p align="center">
+  <a href="https://github.com/ThisSyaa">
+    <img src="https://cdn.simpleicons.org/github/white" width="45"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  <a href="https://www.instagram.com/syaaaaxii/">
+    <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" width="45"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
 
-## License
+  <a href="mailto:muhammadsyafiqasshidiq@gmail.com">
+    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png" width="45"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  <a href="https://discord.com/users/905121007470268427">
+    <img src="https://cdn.simpleicons.org/discord" width="45"/>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+
+  <a href="https://www.linkedin.com/in/muhammad-syafiq-as-shidiq-429296310">
+    <img src="https://cdn-icons-png.flaticon.com/128/2504/2504923.png" width="45"/>
+  </a>
+   &nbsp;&nbsp;&nbsp;
+   
+   <a href="https://x.com/Syaaxiii">
+    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" width="45"/>
+  </a>
+</p>
