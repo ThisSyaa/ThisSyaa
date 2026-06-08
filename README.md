@@ -5,17 +5,25 @@
 <h1 align="center">Syaaxi</h1>
 <h3 align="center">Web Developer | IoT Enthusiast | Building Smart Solutions</h3>
 
----
-
-## 🚀 About Me
-- 💻 Passionate in Web Development
-- 🌐 Building websites with modern technology
-- 📡 Exploring IoT & automation systems
-- ⚡ Always learning new things
+<p align="center">
+  <a href="http://syaaxi.my.id/">
+    <img src="https://img.shields.io/badge/🌍_Visit_My_Portfolio-syaaxi.my.id-0078D7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
+  </a>
+</p>
 
 ---
 
-## 🛠️ Tech Stack
+## <img src="https://api.iconify.design/fluent-emoji:rocket.svg" width="28" align="center"/> About Me
+<p>
+  <img src="https://api.iconify.design/fluent-emoji:laptop-computer.svg" width="20" align="center"/> Passionate in Web Development <br/>
+  <img src="https://api.iconify.design/fluent-emoji:globe-with-meridians.svg" width="20" align="center"/> Building websites with modern technology <br/>
+  <img src="https://api.iconify.design/fluent-emoji:satellite-antenna.svg" width="20" align="center"/> Exploring IoT & automation systems <br/>
+  <img src="https://api.iconify.design/fluent-emoji:high-voltage.svg" width="20" align="center"/> Always learning new things
+</p>
+
+---
+
+## <img src="https://api.iconify.design/fluent-emoji:toolbox.svg" width="28" align="center"/> Tech Stack
 <p align="center">
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -28,25 +36,27 @@
 
 ---
 
-## 🎧 Playlist
+## <img src="https://api.iconify.design/fluent-emoji:headphone.svg" width="28" align="center"/> Playlist
 
 <p align="center">
   <a href="https://open.spotify.com/playlist/2qULvQY83B8tjXgYnRjHXZ">
-    <img src="https://img.shields.io/badge/🎧%20My%20Playlist-Open%20Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
+    <img src="https://img.shields.io/badge/My_Playlist-Open_Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white"/>
   </a>
 </p>
 
 ---
 
-## 🚀 Featured Projects
-- 🌐 Portfolio Website
-- 📡 IoT Smart Monitoring
-- 🔐 Login System PHP
-- ⚙️ Automation Dashboard
+## <img src="https://api.iconify.design/fluent-emoji:star.svg" width="28" align="center"/> Featured Projects
+<p>
+  <img src="https://api.iconify.design/fluent-emoji:globe-with-meridians.svg" width="20" align="center"/> Portfolio Website <br/>
+  <img src="https://api.iconify.design/fluent-emoji:satellite-antenna.svg" width="20" align="center"/> IoT Smart Monitoring <br/>
+  <img src="https://api.iconify.design/fluent-emoji:closed-lock-with-key.svg" width="20" align="center"/> Login System PHP <br/>
+  <img src="https://api.iconify.design/fluent-emoji:gear.svg" width="20" align="center"/> Automation Dashboard
+</p>
 
 ---
 
-## 💬 Discord
+## <img src="https://api.iconify.design/fluent-emoji:speech-balloon.svg" width="28" align="center"/> Discord
 
 <p align="center">
   <a href="https://discord.com/users/905121007470268427">
@@ -56,7 +66,7 @@
 
 ---
 
-## 📫 Contact
+## <img src="https://api.iconify.design/fluent-emoji:mailbox-with-mail.svg" width="28" align="center"/> Contact
 
 <p align="center">
   <a href="https://github.com/ThisSyaa">
