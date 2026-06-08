@@ -7,36 +7,32 @@
 
 <p align="center">
   <a href="http://syaaxi.my.id/">
-    <img src="https://img.shields.io/badge/🌍_Visit_My_Portfolio-syaaxi.my.id-0078D7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Visit_My_Portfolio-syaaxi.my.id-0078D7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
   </a>
 </p>
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:rocket.svg" width="28" align="center"/> About Me
-<p>
-  <img src="https://api.iconify.design/fluent-emoji:laptop-computer.svg" width="20" align="center"/> Passionate in Web Development <br/>
-  <img src="https://api.iconify.design/fluent-emoji:globe-with-meridians.svg" width="20" align="center"/> Building websites with modern technology <br/>
-  <img src="https://api.iconify.design/fluent-emoji:satellite-antenna.svg" width="20" align="center"/> Exploring IoT & automation systems <br/>
-  <img src="https://api.iconify.design/fluent-emoji:high-voltage.svg" width="20" align="center"/> Always learning new things
-</p>
+## <img src="https://api.iconify.design/lucide:user.svg?color=8b949e" width="24" align="center"/> About Me
+- <img src="https://api.iconify.design/lucide:code.svg?color=8b949e" width="16" align="center"/> Passionate in Web Development
+- <img src="https://api.iconify.design/lucide:globe.svg?color=8b949e" width="16" align="center"/> Building websites with modern technology
+- <img src="https://api.iconify.design/lucide:cpu.svg?color=8b949e" width="16" align="center"/> Exploring IoT & automation systems
+- <img src="https://api.iconify.design/lucide:zap.svg?color=8b949e" width="16" align="center"/> Always learning new things
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:toolbox.svg" width="28" align="center"/> Tech Stack
+## <img src="https://api.iconify.design/lucide:layers.svg?color=8b949e" width="24" align="center"/> Tech Stack
 <p align="center">
-
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
 <img src="https://img.shields.io/badge/IoT-00C853?style=for-the-badge&logo=arduino&logoColor=white"/>
-
 </p>
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:headphone.svg" width="28" align="center"/> Playlist
+## <img src="https://api.iconify.design/lucide:headphones.svg?color=8b949e" width="24" align="center"/> Playlist
 
 <p align="center">
   <a href="https://open.spotify.com/playlist/2qULvQY83B8tjXgYnRjHXZ">
@@ -46,17 +42,15 @@
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:star.svg" width="28" align="center"/> Featured Projects
-<p>
-  <img src="https://api.iconify.design/fluent-emoji:globe-with-meridians.svg" width="20" align="center"/> Portfolio Website <br/>
-  <img src="https://api.iconify.design/fluent-emoji:satellite-antenna.svg" width="20" align="center"/> IoT Smart Monitoring <br/>
-  <img src="https://api.iconify.design/fluent-emoji:closed-lock-with-key.svg" width="20" align="center"/> Login System PHP <br/>
-  <img src="https://api.iconify.design/fluent-emoji:gear.svg" width="20" align="center"/> Automation Dashboard
-</p>
+## <img src="https://api.iconify.design/lucide:star.svg?color=8b949e" width="24" align="center"/> Featured Projects
+- <img src="https://api.iconify.design/lucide:globe.svg?color=8b949e" width="16" align="center"/> Portfolio Website
+- <img src="https://api.iconify.design/lucide:activity.svg?color=8b949e" width="16" align="center"/> IoT Smart Monitoring
+- <img src="https://api.iconify.design/lucide:lock.svg?color=8b949e" width="16" align="center"/> Login System PHP
+- <img src="https://api.iconify.design/lucide:settings.svg?color=8b949e" width="16" align="center"/> Automation Dashboard
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:speech-balloon.svg" width="28" align="center"/> Discord
+## <img src="https://api.iconify.design/lucide:message-square.svg?color=8b949e" width="24" align="center"/> Discord
 
 <p align="center">
   <a href="https://discord.com/users/905121007470268427">
@@ -66,7 +60,7 @@
 
 ---
 
-## <img src="https://api.iconify.design/fluent-emoji:mailbox-with-mail.svg" width="28" align="center"/> Contact
+## <img src="https://api.iconify.design/lucide:mail.svg?color=8b949e" width="24" align="center"/> Contact
 
 <p align="center">
   <a href="https://github.com/ThisSyaa">
