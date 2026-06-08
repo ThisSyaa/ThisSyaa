@@ -85,6 +85,6 @@
    &nbsp;&nbsp;&nbsp;
    
    <a href="https://x.com/Syaaxiii">
-    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" width="45"/>
+    <img src="https://cdn.simpleicons.org/x/FFFFFF" width="45"/>
   </a>
 </p>
