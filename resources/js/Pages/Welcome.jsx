@@ -1,5 +1,8 @@
 import { Head } from '@inertiajs/react';
-import { useEffect, useState } from 'react'; // 1. Tambahkan useState di sini
+import { useEffect, useState } from 'react';
+import ProjectCard from '../Components/ProjectCard';
+import SkillsCloud from '../Components/SkillsCloud';
+import NetworkBackground from '../Components/NetworkBackground';
 
 export default function Welcome() {
     // 2. Buat state untuk mendeteksi menu terbuka/tertutup
@@ -11,18 +14,43 @@ export default function Welcome() {
     };
 
     const skills = [
-        { name: 'JavaScript', level: 90 },
-        { name: 'PHP / Laravel', level: 88 },
-        { name: 'React / Inertia', level: 85 },
-        { name: 'MySQL', level: 80 },
-        { name: 'Tailwind CSS', level: 92 },
-        { name: 'Node.js', level: 72 },
+        { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', radius: 140, duration: 25, dir: 'normal' },
+        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', radius: 190, duration: 32, dir: 'reverse' },
+        { name: 'PHP / Laravel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', radius: 240, duration: 22, dir: 'normal' },
+        { name: 'React / Inertia', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg', radius: 290, duration: 38, dir: 'reverse' },
+        { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg', radius: 340, duration: 28, dir: 'normal' },
+        { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', radius: 390, duration: 45, dir: 'reverse' },
+        { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg', radius: 440, duration: 35, dir: 'normal' },
     ];
 
     const projects = [
-        { emoji: '🌐', num: '01', name: '-', desc: '', tags: ['Laravel', 'React', 'MySQL'] },
-        { emoji: '🛒', num: '02', name: '-', desc: '', tags: ['Next.js', 'Tailwind', 'Stripe'] },
-        { emoji: '📊', num: '03', name: '-', desc: '', tags: ['Vue.js', 'Chart.js', 'REST API'] },
+        {
+            emoji: '🇰🇷',
+            num: '01',
+            name: 'SR Korean Translate',
+            desc: 'Aplikasi web penerjemah bahasa Korea dengan antarmuka yang bersih dan mudah digunakan.',
+            tags: ['HTML', 'CSS', 'JavaScript'],
+            link: 'https://sr-korean-translate.vercel.app/',
+            cover: '/images/sr_korean_translate.mp4'
+        },
+        {
+            emoji: '🛒',
+            num: '02',
+            name: 'E-Commerce Store',
+            desc: 'Platform toko online modern.',
+            tags: ['Next.js', 'Tailwind', 'Stripe'],
+            link: '#',
+            cover: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop'
+        },
+        {
+            emoji: '📊',
+            num: '03',
+            name: 'Analytics Dashboard',
+            desc: 'Dashboard interaktif untuk visualisasi data.',
+            tags: ['Vue.js', 'Chart.js', 'REST API'],
+            link: '#',
+            cover: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'
+        },
     ];
 
     useEffect(() => {
@@ -55,10 +83,6 @@ export default function Welcome() {
 
         const handleScroll = () => {
             nav?.classList.toggle('nav-scrolled', window.scrollY > 40);
-            const glow = document.querySelector('.hero-glow');
-            const photoFrame = document.querySelector('.photo-frame');
-            if (glow) glow.style.transform = `translateY(${window.scrollY * 0.12}px)`;
-            if (photoFrame) photoFrame.style.transform = `translateY(${window.scrollY * 0.04}px)`;
             updateActiveNav();
 
             document.querySelectorAll('.scroll-driven').forEach((el) => {
@@ -68,17 +92,10 @@ export default function Welcome() {
                 const clamped = Math.max(0, Math.min(1, progress));
                 el.style.setProperty('--scroll-progress', clamped);
             });
-
-            const skillsRect = document.querySelector('#skills')?.getBoundingClientRect();
-            if (skillsRect && skillsRect.top < window.innerHeight * 0.75) {
-                document.querySelectorAll('.skill-fill').forEach((bar) => {
-                    bar.classList.add('skill-animated');
-                });
-            }
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        updateActiveNav(); 
+        updateActiveNav();
 
         const revealObs = new IntersectionObserver(
             (entries) => {
@@ -94,9 +111,62 @@ export default function Welcome() {
         );
         document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
 
+        // Magnetic Buttons Logic
+        const magneticBtns = document.querySelectorAll('.btn-magnetic');
+        const handleMagneticMove = (e) => {
+            const btn = e.currentTarget;
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+
+            const glow = btn.querySelector('.btn-glow');
+            if (glow) {
+                glow.style.left = `${e.clientX - rect.left}px`;
+                glow.style.top = `${e.clientY - rect.top}px`;
+            }
+        };
+        const handleMagneticLeave = (e) => {
+            e.currentTarget.style.transform = `translate(0px, 0px)`;
+        };
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', handleMagneticMove);
+            btn.addEventListener('mouseleave', handleMagneticLeave);
+        });
+
+        // Hero Mouse Parallax Logic
+        const heroSection = document.querySelector('#profile');
+        const heroCutout = document.querySelector('.hero-cutout');
+        const heroWatermark = document.querySelector('.hero-watermark');
+
+        const handleParallax = (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 40;
+            const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+            if (heroCutout) heroCutout.style.transform = `translate(${x}px, ${y}px)`;
+            if (heroWatermark) heroWatermark.style.transform = `translate(-50%, -50%) translate(${x * -0.5}px, ${y * -0.5}px)`;
+        };
+        const handleParallaxLeave = () => {
+            if (heroCutout) heroCutout.style.transform = `translate(0px, 0px)`;
+            if (heroWatermark) heroWatermark.style.transform = `translate(-50%, -50%) translate(0px, 0px)`;
+        };
+
+        if (heroSection) {
+            heroSection.addEventListener('mousemove', handleParallax);
+            heroSection.addEventListener('mouseleave', handleParallaxLeave);
+        }
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
             revealObs.disconnect();
+            magneticBtns.forEach(btn => {
+                btn.removeEventListener('mousemove', handleMagneticMove);
+                btn.removeEventListener('mouseleave', handleMagneticLeave);
+            });
+            if (heroSection) {
+                heroSection.removeEventListener('mousemove', handleParallax);
+                heroSection.removeEventListener('mouseleave', handleParallaxLeave);
+            }
         };
     }, []);
 
@@ -105,11 +175,17 @@ export default function Welcome() {
             <Head title="Portofolio Syaa" />
 
             <div>
+                {/* AMBIENT BACKGROUND */}
+                <div className="ambient-background">
+                    <NetworkBackground />
+                    <div className="noise-overlay"></div>
+                </div>
+
                 {/* NAVBAR */}
                 <nav className="animate-entrance">
                     <div className="nav-wrap">
                         <div className="logo">Syaa<b>xi</b>.</div>
-                        
+
                         {/* 3. Class ditambahkan agar menu muncul dari samping jika isOpen = true */}
                         <ul className={`nav-links ${isOpen ? 'menu-open' : ''}`}>
                             <li><a href="#profile" onClick={toggleMenu}>Profile</a></li>
@@ -119,8 +195,8 @@ export default function Welcome() {
                         </ul>
 
                         {/* 4. Tombol Hamburger */}
-                        <button 
-                            className={`hamburger ${isOpen ? 'open' : ''}`} 
+                        <button
+                            className={`hamburger ${isOpen ? 'open' : ''}`}
                             onClick={toggleMenu}
                             aria-label="Toggle navigation"
                         >
@@ -132,34 +208,58 @@ export default function Welcome() {
                 </nav>
 
                 {/* HERO */}
-                <section id="profile">
-                    <div className="photo-col relative animate-entrance delay-100">
-                        <div className="photo-frame group">
-                            <div className="absolute inset-[-100%] bg-[conic-gradient(from_var(--angle),#6366f1_0%,#c084fc_25%,#6366f1_50%,#c084fc_75%,#6366f1_100%)] animate-[neonWalk_3s_linear_infinite] group-hover:animate-[neonWalk_1.5s_linear_infinite] z-0"></div>
-                            <div className="absolute inset-[3px] bg-stone-950 z-[1] overflow-hidden rounded-[2px]">
-                                <img
-                                    src="https://avatars.githubusercontent.com/u/174694675?v=4"
-                                    alt="Foto Syaa"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </div>
-                        <div className="photo-badge z-[20]">✦ Ordinary People</div>
+                <section id="profile" className="hero-container relative w-full min-h-screen flex items-center overflow-hidden">
+                    
+                    {/* GIANT WATERMARK */}
+                    <div className="hero-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+                        SYAAXI
                     </div>
 
-                    <div className="text-col">
-                        <div className="hero-glow" />
-                        <p className="hero-eyebrow animate-entrance delay-200">Fullstack Developer</p>
-                        <h1 className="hero-title animate-entrance delay-300">
-                            Halo,<br />Saya <em>Syaa</em>
-                        </h1>
-                        <div className="bio animate-entrance delay-400">
-                            <p>Saya seorang manusia biasa yang berfokus membangun produk digital yang fungsional, cepat, dan mudah digunakan.</p>
-                            <p>Dengan pengalaman di Laravel, React, dan ekosistemnya, saya senang mengubah ide sederhana menjadi aplikasi yang nyata. Di luar kode, saya penggemar kopi hitam dan desain tipografi.</p>
+                    {/* FREE-STANDING HERO IMAGE */}
+                    <div className="hero-cutout-wrapper absolute -bottom-5 right-[12%] h-[90vh] z-10 pointer-events-none flex flex-col items-center">
+                        
+                        {/* MAGIC CIRCLE (SIGIL) INTERSECTING IN 3D */}
+                        <div className="magic-circle-3d">
+                            <div className="ring ring-1"></div>
+                            <div className="ring ring-2"></div>
+                            <div className="ring ring-3"></div>
+                            <div className="runes"></div>
                         </div>
-                        <div className="hero-actions animate-entrance delay-500">
-                            <a href="#contact" className="btn-primary">Hubungi Saya</a>
-                            <a href="#projects" className="btn-ghost">Lihat Proyek ↓</a>
+
+                        <img 
+                            src="/images/hero-cutout.png" 
+                            alt="Hero Syaa" 
+                            className="hero-cutout h-full w-auto object-contain"
+                        />
+                    </div>
+
+                    {/* TEXT CONTENT */}
+                    <div className="hero-content relative z-20 w-full max-w-7xl mx-auto px-8 flex flex-col justify-center">
+                        <div className="hero-eyebrow-container animate-entrance delay-100">
+                            <span className="hero-eyebrow-line"></span>
+                            <p className="hero-eyebrow">Fullstack Developer</p>
+                        </div>
+
+                        <div className="hero-title-container animate-entrance delay-200 mt-6">
+                            <h1 className="hero-title-giant">
+                                Halo,<br />Saya <em>Syaa</em>
+                            </h1>
+                        </div>
+
+                        <div className="bio-staggered mt-8 max-w-xl">
+                            <div className="stagger-line delay-300">
+                                <p>Saya seorang manusia biasa yang berfokus membangun <span className="highlight">produk digital</span> yang <span className="highlight">fungsional</span>, <span className="highlight">cepat</span>, dan <span className="highlight">mudah digunakan</span>.</p>
+                            </div>
+                            <div className="stagger-line delay-400 mt-4">
+                                <p>Dengan pengalaman di <span className="highlight">Laravel</span>, <span className="highlight">React</span>, dan ekosistemnya, saya senang mengubah ide sederhana menjadi aplikasi yang nyata. Di luar kode, saya penggemar kopi hitam dan desain tipografi.</p>
+                            </div>
+                        </div>
+
+                        <div className="hero-actions animate-entrance delay-500 mt-12">
+                            <a href="#contact" className="btn-magnetic btn-primary">
+                                <span className="btn-text">Hubungi Saya</span>
+                                <span className="btn-glow"></span>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -172,22 +272,9 @@ export default function Welcome() {
                         <p className="section-eyebrow">Expertise</p>
                         <h2 className="section-title">Bahasa & Teknologi</h2>
                     </div>
-                    <div className="skills-grid">
-                        {skills.map((s, i) => (
-                            <div
-                                className="skill-item reveal reveal-up"
-                                style={{ '--stagger': i }}
-                                key={s.name}
-                            >
-                                <div className="skill-top">
-                                    <span className="skill-name">{s.name}</span>
-                                    <span className="skill-pct">{s.level}%</span>
-                                </div>
-                                <div className="skill-track">
-                                    <div className="skill-fill" style={{ '--target-width': `${s.level}%` }} />
-                                </div>
-                            </div>
-                        ))}
+                    <div className="reveal reveal-up w-full flex justify-center py-10 relative">
+                        <div className="hero-glow absolute opacity-30 pointer-events-none" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                        <SkillsCloud />
                     </div>
                 </section>
 
@@ -199,25 +286,9 @@ export default function Welcome() {
                         <p className="section-eyebrow">Selected Work</p>
                         <h2 className="section-title">Project Pilihan</h2>
                     </div>
-                    <div className="projects-list">
+                    <div className="projects-grid">
                         {projects.map((p, i) => (
-                            <div
-                                className="project-row reveal reveal-right"
-                                style={{ '--stagger': i }}
-                                key={p.num}
-                            >
-                                <div className="proj-emoji">{p.emoji}</div>
-                                <div className="proj-body">
-                                    <p className="proj-meta">{p.num} — Project</p>
-                                    <h3 className="proj-name">{p.name}</h3>
-                                    <p className="proj-desc">{p.desc}</p>
-                                </div>
-                                <div className="proj-tags">
-                                    {p.tags.map((t) => (
-                                        <span className="tag" key={t}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
+                            <ProjectCard p={p} i={i} key={p.num} />
                         ))}
                     </div>
                 </section>
@@ -234,9 +305,18 @@ export default function Welcome() {
                     </div>
                     <div className="contact-right">
                         {[
-                            { icon: '✉️', label: 'Email', value: 'muhammadsyafiqasshidiq@gmail.com', href: 'mailto:muhammadsyafiqasshidiq@gmail.com' },
-                            { icon: '💼', label: 'LinkedIn', value: 'Muhammad Syafiq As Shidiq', href: 'https://www.linkedin.com/in/muhammad-syafiq-as-shidiq-429296310' },
-                            { icon: '🐙', label: 'GitHub', value: 'ThisSyaa', href: 'https://github.com/ThisSyaa' },
+                            {
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>,
+                                label: 'Email', value: 'muhammadsyafiqasshidiq@gmail.com', href: 'mailto:muhammadsyafiqasshidiq@gmail.com'
+                            },
+                            {
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
+                                label: 'LinkedIn', value: 'Muhammad Syafiq As Shidiq', href: 'https://www.linkedin.com/in/muhammad-syafiq-as-shidiq-429296310'
+                            },
+                            {
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>,
+                                label: 'GitHub', value: 'ThisSyaa', href: 'https://github.com/ThisSyaa'
+                            },
                         ].map((c, i) => (
                             <a
                                 href={c.href}

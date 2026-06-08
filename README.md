@@ -87,8 +87,4 @@
    <a href="https://x.com/Syaaxiii">
     <img src="https://cdn-icons-png.flaticon.com/128/5968/5968958.png" width="45"/>
   </a>
-<<<<<<< HEAD
 </p>
-=======
-</p>
->>>>>>> c17660ea6063f72bd58b5142efbea9c1596d841c
