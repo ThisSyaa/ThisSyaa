@@ -4,11 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'Syaaxi · Fullstack Developer') }}</title>
 
-        <!-- Fonts -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <script>try{document.documentElement.dataset.intensity=localStorage.getItem('syaaxi-intensity')||'balanced'}catch(e){document.documentElement.dataset.intensity='balanced'}</script>
+
+        <!-- Fonts: UnifrakturCook + Grenze Gotisch (blackletter display) + Outfit (body) -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=grenze-gotisch:400,600,700,900|unifrakturcook:700|outfit:300,400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @routes

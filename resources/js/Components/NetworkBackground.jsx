@@ -51,9 +51,9 @@ export default function NetworkBackground() {
                         const avgX = (p1.x + p2.x) / 2;
                         const ratio = avgX / width;
                         
-                        const r = Math.round(94 + ratio * (168 - 94));
-                        const g = Math.round(234 + ratio * (85 - 234));
-                        const b = Math.round(212 + ratio * (247 - 212));
+                        const r = Math.round(200 + ratio * (255 - 200));
+                        const g = Math.round(25 + ratio * (107 - 25));
+                        const b = Math.round(18 + ratio * (53 - 18));
 
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);
@@ -80,9 +80,9 @@ export default function NetworkBackground() {
                 const baseOpacity = 0.2 + (pulseIntensity * 0.8);
 
                 const ratio = p.x / width;
-                const r = Math.round(94 + ratio * (168 - 94));
-                const g = Math.round(234 + ratio * (85 - 234));
-                const b = Math.round(212 + ratio * (247 - 212));
+                const r = Math.round(200 + ratio * (255 - 200));
+                const g = Math.round(25 + ratio * (107 - 25));
+                const b = Math.round(18 + ratio * (53 - 18));
 
                 // Glow effect
                 ctx.shadowBlur = 15 * pulseIntensity;
@@ -112,10 +112,9 @@ export default function NetworkBackground() {
     }, []);
 
     return (
-        <canvas 
-            ref={canvasRef} 
-            className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
-            style={{ opacity: 0.85 }}
+        <canvas
+            ref={canvasRef}
+            className="network-bg absolute top-0 left-0 w-full h-full pointer-events-none z-0"
         />
     );
 }

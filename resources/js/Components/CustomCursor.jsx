@@ -6,13 +6,13 @@ export default function CustomCursor() {
     // Ini bypass siklus re-render React (useState) yang menyebabkan lag/berat
     const mouseX = useMotionValue(-100);
     const mouseY = useMotionValue(-100);
-    
+
     // Memberikan efek spring/elastisitas tanpa React state
     const smoothX = useSpring(mouseX, { stiffness: 600, damping: 30, mass: 0.2 });
     const smoothY = useSpring(mouseY, { stiffness: 600, damping: 30, mass: 0.2 });
 
     const scrollProgress = useMotionValue(0);
-    
+
     // Hover tetap pakai useState karena kita perlu trigger animasi CSS (scale/color)
     // yang tidak dijalankan di setiap frame mousemove
     const [isHovering, setIsHovering] = useState(false);
@@ -24,6 +24,10 @@ export default function CustomCursor() {
             // Langsung update node DOM via Framer Motion, 0 lag.
             mouseX.set(e.clientX - 12);
             mouseY.set(e.clientY - 12);
+            // Publikasikan posisi untuk "torch reveal" hero (dipakai .scene-descent::before)
+            const root = document.documentElement;
+            root.style.setProperty('--mx', `${e.clientX}px`);
+            root.style.setProperty('--my', `${e.clientY}px`);
         };
 
         const handleMouseOver = (e) => {
@@ -42,10 +46,11 @@ export default function CustomCursor() {
             scrollProgress.set(scroll);
         };
 
+        // Semua listener passive + tidak pernah preventDefault → tidak mengganggu scroll/tap/click.
         window.addEventListener('mousemove', updateMousePosition, { passive: true });
         window.addEventListener('mouseover', handleMouseOver, { passive: true });
         window.addEventListener('scroll', handleScroll, { passive: true });
-        
+
         handleScroll();
 
         return () => {
@@ -65,24 +70,24 @@ export default function CustomCursor() {
 
     return (
         <motion.div
-            className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999] flex items-center justify-center bg-white shadow-[0_0_15px_rgba(94,234,212,0.8)]"
+            className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999] flex items-center justify-center bg-white shadow-[0_0_16px_rgba(255,84,54,0.9)]"
             style={{ x: smoothX, y: smoothY }}
             animate={{
                 scale: isHovering ? 2.5 : 1,
-                backgroundColor: isHovering ? 'rgba(94,234,212,0.1)' : 'rgba(255,255,255,1)',
-                border: isHovering ? '1px solid rgba(94,234,212,1)' : 'none'
+                backgroundColor: isHovering ? 'rgba(220,38,38,0.18)' : 'rgba(255,255,255,1)',
+                border: isHovering ? '1px solid rgba(255,107,53,1)' : 'none'
             }}
             transition={{ type: 'spring', stiffness: 600, damping: 30, mass: 0.2 }}
         >
-            <svg 
-                className="absolute w-[44px] h-[44px]" 
-                viewBox="0 0 40 40" 
+            <svg
+                className="absolute w-[44px] h-[44px]"
+                viewBox="0 0 40 40"
                 style={{ transform: 'rotate(-90deg)', opacity: isHovering ? 0 : 1, transition: 'opacity 0.2s' }}
             >
-                <motion.circle 
-                    cx="20" cy="20" r="18" 
-                    fill="none" 
-                    stroke="rgba(94,234,212,0.8)" 
+                <motion.circle
+                    cx="20" cy="20" r="18"
+                    fill="none"
+                    stroke="rgba(255,107,53,0.9)"
                     strokeWidth="1.5"
                     strokeDasharray={circleCircumference}
                     style={{ strokeDashoffset: dashOffset }}

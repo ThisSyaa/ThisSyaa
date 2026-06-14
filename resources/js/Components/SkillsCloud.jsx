@@ -52,7 +52,7 @@ export default function SkillsCloud() {
     }, []);
 
     return (
-        <div ref={wrapperRef} className="flex justify-center items-center w-full min-h-[600px] cursor-grab active:cursor-grabbing relative z-10" style={{ touchAction: 'none' }}>
+        <div ref={wrapperRef} className="flex justify-center items-center w-full min-h-[400px] md:min-h-[460px] cursor-grab active:cursor-grabbing relative z-10" style={{ touchAction: 'none' }}>
             <Cloud
                 containerProps={{ style: { width: '100%', height: '100%', maxWidth: '800px', display: 'flex', justifyContent: 'center', alignItems: 'center' } }}
                 options={{ 
