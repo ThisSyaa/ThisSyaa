@@ -11,6 +11,12 @@
   </a>
 </p>
 
+<h1 align="center">Active Project</h1>
+<p align="center">
+  <a href="[http://syaaxi.my.id/](https://korean-translate-v2.vercel.app/)">
+    <img src="https://img.shields.io/badge/Project-korean-translate-v2.vercel.app-0078D7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
+  </a>
+</p>
 ---
 
 ## <img src="https://api.iconify.design/lucide:user.svg?color=8b949e" width="24" align="center"/> About Me
