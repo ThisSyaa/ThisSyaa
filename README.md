@@ -13,8 +13,8 @@
 
 <h1 align="center">Active Project</h1>
 <p align="center">
-  <a href="[http://syaaxi.my.id/](https://korean-translate-v2.vercel.app/)">
-    <img src="[![Korean Translate](https://img.shields.io/badge/🇰🇷_Belajar_Korea-Live-3b82f6?style=flat-square)](https://korean-translate-v2.vercel.app)" />
+  <a href="https://korean-translate-v2.vercel.app/">
+    <img src="https://img.shields.io/badge/Korean_Translate-Live-3b82f6?style=flat-square" alt="Korean Translate" />
   </a>
 </p>
 
